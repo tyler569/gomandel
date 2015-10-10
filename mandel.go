@@ -9,8 +9,8 @@ import (
 	"image"
 	"image/color"
 	"image/png"
+	"io"
 	"math/cmplx"
-	"os"
 )
 
 type corner struct {
@@ -58,7 +58,7 @@ func calcRatios(m *Mandel) {
 	m.ratioi = irangey / mrangei
 }
 
-func MandelImage(w *io.Writer) {
+func MandelImage(w io.Writer) {
 	c1 := corner{-2, 1, 0, 0}
 	c2 := corner{1, -1, 1500, 1000}
 	m := Mandel{c1, c2, 0, 0}
